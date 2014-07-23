@@ -26,6 +26,8 @@ namespace Noam {
         virtual qint64 write( const QByteArray & byteArray );
 
         virtual void connectToHost( const QHostAddress& address, quint16 port );
+        virtual bool waitForConnected( int msecs );
+        virtual QString errorString();
 
         virtual void close();
         virtual void flush();

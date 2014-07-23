@@ -43,6 +43,16 @@ namespace Noam {
         socket->connectToHost( address, port );
     }
 
+    bool Socket::waitForConnected( int msecs = 30000 )
+    {
+        return socket->waitForConnected( msecs );
+    }
+
+    QString Socket::errorString()
+    {
+        return socket->errorString();
+    }
+
     void Socket::close()
     {
         socket->close();
