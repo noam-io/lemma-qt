@@ -19,12 +19,20 @@ void EventRegistrar::sendRegistration()
     Noam::MessageBuilder builder( lemmaId );
     QVariantList plays;
     QVariantList hears;
+    QSet<QString> uniqueHears;
 
     QList< Noam::EventFilter* >::iterator i = filters.begin();
     while ( i != filters.end() )
     {
-        hears.append( (*i)->getTopicName() );
+        uniqueHears << ( (*i)->getTopicName() );
         ++i;
+    }
+
+    QSet<QString>::iterator j = uniqueHears.begin();
+    while ( j != uniqueHears.end() )
+    {
+        hears << ( QVariant(*j) );
+        ++j;
     }
 
     QByteArray message = builder.buildRegister( deviceType, systemVersion, port, hears, plays );

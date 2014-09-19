@@ -21,13 +21,17 @@ HEADERS += \
     Noam/EventFilter.h \        
     Noam/ConnectionStatus.h \
     Lemma.h \    
-    ../../../../../../Qt projects/NoamTest/Lemma/LemmaLib/Noam/Config.h \
-    ../../../../../../Qt projects/NoamTest/Lemma/LemmaLib/Noam/Config.h \
-    ../../../../../../Qt projects/NoamTest/Lemma/LemmaLib/Noam/Config.h \
-    ../../../../../../Qt projects/NoamTest/Lemma/LemmaLib/Config.h \
+    Config.h \
     Noam/HostLocator.h \
     Noam/Polo.h \
-    MarcoTimer.h
+    MarcoTimer.h \
+    XmlKeyValueParser.h \
+    Song.h \
+    SongGroup.h \
+    MapToSongConverter.h \
+    ConfigFileChecker.h \
+    ConfigurationFile.h
+
 
 SOURCES += \
     SocketReader.cpp \
@@ -46,7 +50,13 @@ SOURCES += \
     Lemma.cpp \
     Noam/HostLocator.cpp \
     Noam/Polo.cpp \
-    MarcoTimer.cpp
+    MarcoTimer.cpp \
+    XmlKeyValueParser.cpp \
+    Song.cpp \
+    SongGroup.cpp \
+    MapToSongConverter.cpp \
+    ConfigFileChecker.cpp \
+    ConfigurationFile.cpp
 
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompiled.h

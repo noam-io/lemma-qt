@@ -53,7 +53,8 @@ namespace Noam
 
     void MessageSender::disconnected()
     {
-        qDebug() << "Disconnected from Noam Host.";
+        qDebug() << "Disconnected from Noam Host..";
+        qDebug() << outSocket->errorString();
         isConnected = false;
         connectionAttempted = false;
         emit connectionLost();
